@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Sample React Chrome Extension",
+  "version": "1.0",
+  "description": "A simple example of a Chrome extension built with React.js",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+          "16": "favicon.ico",
+          "48": "logo192.png",
+          "128": "logo512.png"
+      }
+  },
+  "icons": {
+      "16": "favicon.ico",
+      "48": "logo192.png",
+      "128": "logo512.png"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+      }
+  ]
+}
+
